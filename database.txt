@@ -1,0 +1,30 @@
+create database Recruitment;
+use Recruitment;
+
+create table demand
+( rrid varchar(20) primary key, 
+job_desc varchar(50) not null
+);
+
+insert into demand
+(rrid, job_desc)
+values('10667189', 'ASE');
+
+select * from demand;
+
+create table recruiter
+( rec_id varchar(20) primary key, 
+rrid varchar(20), 
+foreign key(rrid) references demand(rrid),
+job_title varchar(50)
+);
+
+insert into recruiter
+(rec_id, rrid,job_title)
+values('1066', '10667189','ASEfvnkdsvn');
+
+select * from recruiter;
+
+select job_title from recruiter
+where rrid =(select rrid from demand
+where rrid='10667189') ;
