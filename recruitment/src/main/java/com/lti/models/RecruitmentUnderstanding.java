@@ -6,6 +6,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -25,27 +26,35 @@ public class RecruitmentUnderstanding {
 	private int formIdTwo;  
 	
 	@Column(name ="job_title")
+	@NotNull
 	private String jobTitle;
 	
 	@Column(name ="job_overview")
+	@NotNull
 	private String jobOverview;
 	
 	@Column(name ="Resources_Needed")
+	@NotNull
 	private int resourcesNeeded;
 	
 	@Column(name ="skill")
+	@NotNull
 	private String skillsRequired;
 	
 	@Column(name ="criteria")
+	@NotNull
 	private String criteria;
 	
 	@Column(name ="Requestor_Id")
+	@NotNull
 	private String requestorId;
 	
 	@Column(name ="Requestor_PU_BU")
+	@NotNull
 	private String requestorPUBU;
 	
 	@Column(name ="Requestor_Department")
+	@NotNull
 	private String requestorDepartment;
 
 	
